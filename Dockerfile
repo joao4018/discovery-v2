@@ -20,6 +20,6 @@ ARG JAVAJAR=/workspace/app/target
 COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
-COPY --from=build ${JAVAJAR}/discovery-0.0.1-SNAPSHOT.jar /app/discovery.jar
+COPY --from=build ${JAVAJAR}/discovery.jar /app/discovery.jar
 CMD ["java", "-jar", "discovery.jar"]
 ENTRYPOINT ["java", "-jar", "discovery.jar"]
